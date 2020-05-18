@@ -2,6 +2,17 @@
 # desarrollo del tp5
 # el ejercicio propuesto es la constante de Kaprekar
 # pedimos el número de 4 digitos a ingresar
+"""
+el matematico Indio Dattaraya Ramchandra Kaprekar descrubrió en 1949 una curiosa característica
+del número 6174. Hoy, se conoce a dicho número como constante de Kaprekar en honor a él.
+el número es notable por la siguiente propiedad:
+1- Elige un número de cuatro digitos que tenga, al menos dos diferentee (es válido colocar
+el digito 0  al principio, por lo que el número 0009 es válido).
+2-coloca sus dígitos en orden ascendente y en orden descendente para formar dos nuevos números
+Puedes añadir los digitos 0 que necesites al principio
+3-Restar el menor al mayor
+4-vuelve al paso 2
+"""
 
 def inicio():
     # ----------------------------------------------------
