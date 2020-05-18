@@ -72,6 +72,23 @@ def inicio():
         else:
             exit()   # genera la salida del programa
 
+        # ----------------------------------------------------------
+        # sección del código donde se desarrolla la validación si el número ingresado
+        # es menor a cero, es lo mismo que  decir número negativo
+        # desplegando la posibilidad de salir del programa
+
+    n = int(sNro)
+    if n < 0:
+        # despliego el mensaje de error del dato mal ingresado
+        print("\n - ERROR -El dato ingresado es un número negativo es invalido, por favor verificar ...")
+        # genero la alternativa de volver a inicio de programa
+        restart = input("\nDesea digitar un número (de 4 dígitos) nuevamente (s/n): ").lower()
+        # condicional que habilita salir o continuar en el programa
+        if restart == "s":
+               inicio()  # acción que hace que se vuelva al inicio del programa
+        else:
+               exit()  # genera la salida del
+
       # ------------------------------------------------------------------
       # sección del código donde se desarrolla el bucle para el calculo
       # de la constante de Kaprekar
@@ -118,6 +135,9 @@ def inicio():
     # genero el condicional para optar para reinciar el programa o salir
     if restart == "s":
         inicio()
+
     else:
         exit()
+
 inicio()
+
