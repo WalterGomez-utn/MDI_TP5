@@ -14,6 +14,8 @@ Puedes añadir los digitos 0 que necesites al principio
 4-vuelve al paso 2
 """
 # defino las funciones para el desarrollo  del calculo de la constante de Kaprekar
+def inicio():
+    "verifico"
 
 def validoNro(numero):  # verifico el numero ingresado y lo casteo a str para comprarlo
     n = str(numero)
@@ -97,15 +99,41 @@ cantNroCalcular = int(input("Ingresa la cantidad  de número(s) a caclcular : ")
 cont = 1
 while cont <= cantNroCalcular:
     numeroIng = int(input("Digite el número (no mayor de 4 digitos) :  "))
+
+    # ----------------------------------------------------------
+    # sección del código donde se desarrolla la validación si el número ingresado
+    # es menor a cero, es lo mismo que  decir número negativo
+    # desplegando la posibilidad de salir del programa
+    if numeroIng < 0:
+        print ("Error, dato ingresado negativo: ")
+        restart = input("\nDesea digitar un número (de 4 dígitos ) nuevamente (s/n): ").lower()
+        # condicional que habilita salir o continuar en el programa
+        if restart == "s":
+            inicio()  # acción que hace que se vuelva al inicio del programa
+        else:
+            exit()  # genera la salida del programa
+        # -----------------------------------------------------
+        # sección del codigo donde se genera la validación
+        # para que el dato ingresado no sea superior a 4 digitos
+    nroIng =str(numeroIng)
+    if len(nroIng) > 4:
+        print("ERROR, el dato ingresado supera los 4 digitos ...")
+        restart = input("\nDesea digitar un número (de 4 dígitos) nuevamente (s/n): ").lower()
+        # condicional que habilita salir o continuar en el programa
+        if restart == "s":
+            inicio()  # acción que hace que se vuelva al inicio del programa
+        else:
+            exit()  # genera la salida del programa
+
     if numeroIng == 6174:
-        print("0")
+            print("0")
     else:
         if validoNro(numeroIng):
             # posibilidad de imprimir el número ingresado  y la cantidad de iteraciones
             # print("El numero: "+ str(numeroIng) + ", Iteraciones: " + str(Kaprekar(numeroIng)))
-            print(str(Kaprekar(numeroIng)))
+             print(str(Kaprekar(numeroIng)))
         else:
-            print('8')
-    cont += 1
+             print('8')
+        cont += 1
 
 
